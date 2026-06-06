@@ -1,21 +1,14 @@
-# Python-Timer
-A basic Python script that sets a timer and alerts when the period ends.
-# Python Timer Project
+import time
+import datetime
+import winsound
 
-## Description
-A simple Python timer that uses `datetime` and `winsound` to alert when the set duration ends.  
-This is my first GitHub project to learn version control and sharing code.
+set_time = int(input("Enter duration in minutes: "))
+end_time = datetime.datetime.now() + datetime.timedelta(minutes=set_time)
 
-## Features
-- Set custom duration in minutes
-- Countdown loop until time ends
-- Beep alert when timer finishes
+print(f"⏳ Timer started for {set_time} minutes...")
 
-## Requirements
-- Python 3.x
-- Windows (for `winsound` module)
+while datetime.datetime.now() < end_time:
+    time.sleep(10)  # check every 10 seconds
 
-## Usage
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/yourusername/Python-Timer.git
+print("End period!")
+winsound.Beep(2000, 1000)  # frequency, duration
