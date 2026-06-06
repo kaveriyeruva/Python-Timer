@@ -6,4 +6,4 @@ end_time = datetime.datetime.now() + datetime.timedelta(minutes=set_time)
 while datetime.datetime.now() < end_time:
     time.sleep(10) 
 print("End period!")
-winsound.Beep(1500, 000)
+winsound.Beep(1500, 3000)
